@@ -2,12 +2,12 @@ services:
   mariadb:
     image: mariadb:10.11.2
     env_file:
-      - ${ROOT_DIR}/.env
-      - ${ROOT_DIR}/.env.local
+      - ${XEBRO_ROOT_DIR}/.env
+      - ${XEBRO_ROOT_DIR}/.env.local
     
     ports:
       - published: 3306
         target: 3306
     volumes:
-      - ${ROOT_DIR}/var/mariadb/:/docker-entrypoint-initdb.d/:rw
-#      - ${ROOT_DIR}/docker/mari odb/init/init_user.sql:/docker-entrypoint-initdb.d/init_user.sql:ro
+      - ${XEBRO_ROOT_DIR}/var/mariadb/:/docker-entrypoint-initdb.d/:rw
+#      - ${XEBRO_ROOT_DIR}/docker/mari odb/init/init_user.sql:/docker-entrypoint-initdb.d/init_user.sql:ro
