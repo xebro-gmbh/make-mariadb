@@ -1,5 +1,5 @@
 #--------------------------
-# xebro GmbH - MariaDB - 0.0.1
+# xebro GmbH - MariaDB - 0.0.2
 #--------------------------
 
  # use the rest as arguments for "run"
