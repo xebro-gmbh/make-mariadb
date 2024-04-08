@@ -9,5 +9,8 @@ services:
       - published: 3306
         target: 3306
     volumes:
-      - ${XEBRO_ROOT_DIR}/var/mariadb/:/docker-entrypoint-initdb.d/:rw
-#      - ${XEBRO_ROOT_DIR}/docker/mari odb/init/init_user.sql:/docker-entrypoint-initdb.d/init_user.sql:ro
+      - ${XEBRO_ROOT_DIR}/docker/.tmp/mariadb/:/docker-entrypoint-initdb.d/:rw
+networks:
+  default:
+    external: true
+    name: ${XEBRO_PROJECT_NAME}

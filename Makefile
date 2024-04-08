@@ -2,12 +2,7 @@
 # xebro GmbH - MariaDB - 0.0.2
 #--------------------------
 
- # use the rest as arguments for "run"
-RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
 DB_FILENAME=$(shell date +"%Y%m%d%H%M%S")
-
-# ...and turn them into do-nothing targets
-$(eval $(RUN_ARGS):;@:)
 
 mariadb.bash: ## Execute bash inside database image
 	@${DOCKER_COMPOSE} ${DOCKER_FILES} exec mariadb bash
